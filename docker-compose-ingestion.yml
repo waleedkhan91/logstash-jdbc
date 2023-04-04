@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  python:
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+volumes:
+  sqlsystem:

@@ -1,0 +1,22 @@
+# This script create database, a table and insert data in to that table which will be used in the script and ingested in elasticsearch.
+
+CREATE DATABASE shopdev
+
+CREATE TABLE [dbo].[applog](
+    [LogId] [INT] IDENTITY(1,1) NOT NULL,
+    [AsnName] [VARCHAR](256) NOT NULL,
+    [EventType] [VARCHAR](50) NOT NULL,
+    [ObjectName] [VARCHAR](256) NOT NULL,
+    [ObjectType] [VARCHAR](25) NOT NULL,
+    [EventDate] [DATETIME] NOT NULL
+)
+
+
+ALTER TABLE [dbo].[applog] ADD  CONSTRAINT [DF_EventsLog_EventDate]  
+DEFAULT (GETDATE()) FOR [EventDate]
+            
+INSERT INTO shopdev.dbo.applog(AsnName, eventtype, 
+    objectname, objecttype)
+VALUES( 'ASDFG', '9', 'list', 'template')
+
+SELECT * from shopdev.dbo.applog order by LogId
