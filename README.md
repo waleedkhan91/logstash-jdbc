@@ -13,3 +13,9 @@ This PoC shows we can get data from MSSQL table and ingest it in elasticsearch. 
     docker-compose-ingestion.yaml -> This will start ingesting random data 
 
     docker-compose-logstash.yaml -> This will start logstash instance and initiate pipeline.
+
+Update: If you want to use windows authentication while establishing connection to database, you can use jTDS JDBC driver.
+
+********************
+Author: Waleed Khan
+********************
